@@ -1,5 +1,6 @@
  
  
+import Header from "./components/Header/Header"
 import "./sass/_index.scss"
 import "./services/EPGServerAPI"
 
@@ -7,7 +8,7 @@ import "./services/EPGServerAPI"
 function App() {
   return (
     <div className="App">
-       <Headers/>
+       <Header/>
     </div>
   );
 }

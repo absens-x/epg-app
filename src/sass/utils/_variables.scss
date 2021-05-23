@@ -31,7 +31,7 @@ $color_light_yellow: #ffd100;
 //-------------------------------
 
 //-------------------------------
-$color_background: #fff;
+$color_background: #f8f8f8;
 $color_text_default: $color_dark;
 
 $is_color_text_select: false;
@@ -45,10 +45,8 @@ $color_link: blue;
 * Typography
 ******************************************************************
 */
-$font_family_sans_serif: "Roboto", "Helvetica Neue", Helvetica, Arial,
-  sans-serif;
-$font_family_serif: "Palatino Linotype", "Times New Roman", "Times", "Georgia",
-  serif;
+$font_family_sans_serif: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font_family_serif: 'Palatino Linotype', 'Times New Roman', 'Times', 'Georgia', serif;
 
 //-------------------------------
 $base_font_family: $font_family_sans_serif;

@@ -1,0 +1,19 @@
+@import '../../sass/utils/index';
+
+.city-selector {
+}
+
+.selector {
+    color: $color_dark;
+    font-weight: bold;
+
+    &:before {
+        display: inline-block;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        margin-right: 10px;
+        background-color: $color_yellow;
+    }
+}
