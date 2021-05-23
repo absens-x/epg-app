@@ -1,6 +1,7 @@
 class EPGServerAPI {
     BASE_API = "http://epg.domru.ru";
     CITY = ""
+    FILTERS = ""
 
     constructor(city = "ekat") {
         this.CITY = city
@@ -31,6 +32,11 @@ class EPGServerAPI {
         const res = await this.getResource(`/channel/info?chid=${id}&domain=${this.CITY}`)
         return res
     }
+
+    getTVShows = async () => {
+      const res = await this.getResource(``)
+      return res
+  }
   }
   
   const obj = new EPGServerAPI();
