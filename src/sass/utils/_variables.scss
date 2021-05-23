@@ -1,0 +1,87 @@
+/*
+******************************************************************
+* Grid & Breakpoints
+* $screen_xl - default max-width for container
+******************************************************************
+*/
+
+$screen_xl: 1281px;
+$screen_lg: 1025px;
+
+$screen_md: 768px;
+
+$screen_sm: 481px;
+$screen_xs: 320px;
+
+$screen_default: 978px;
+$gutter: 15px;
+
+/*
+******************************************************************
+* Colors
+******************************************************************
+*/
+
+$color_dark: #202020;
+$color_light_dark: #333533;
+$color_gray: #d6d6d6;
+$color_yellow: #ffee32;
+$color_light_yellow: #ffd100;
+
+//-------------------------------
+
+//-------------------------------
+$color_background: #fff;
+$color_text_default: $color_dark;
+
+$is_color_text_select: false;
+$color_text_select: white;
+$color_text_bg_select: blue;
+
+$color_link: blue;
+
+/*
+******************************************************************
+* Typography
+******************************************************************
+*/
+$font_family_sans_serif: "Roboto", "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
+$font_family_serif: "Palatino Linotype", "Times New Roman", "Times", "Georgia",
+  serif;
+
+//-------------------------------
+$base_font_family: $font_family_sans_serif;
+$base_font_size: 16px;
+$base_font_line_height: 130%;
+
+//-------------------------------
+$second_font_family: FedraSansAltPro, Impact, sans-serif;
+$second_font_size: 16px;
+$second_font_line_height: 120%;
+$second_font_style_light: 200;
+$second_font_style_medium: 500;
+
+$font_size_xs: 12px;
+$font_size_sm: 24px;
+$font_size_md: 32px;
+$font_size_lg: 48px;
+$font_size_xl: 56px;
+
+/*
+******************************************************************
+* Elements settings
+******************************************************************
+*/
+$is_global_list_style_off: true;
+
+/*
+******************************************************************
+* Z-indexes list
+******************************************************************
+*/
+$z_min: 1;
+$z_header: 7000;
+$z_footer: 6000;
+$z_modal: 9000;
+$z_max: 10000;

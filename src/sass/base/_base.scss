@@ -1,0 +1,68 @@
+@import "../utils/index";
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: $base_font_family;
+  font-size: $base_font_size;
+  line-height: $base_font_line_height;
+  background-color: $color_background;
+  color: $color_text_default;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $second_font_family;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: rem($font_size_xl);
+}
+h2 {
+  font-size: rem($font_size_lg);
+}
+h3 {
+  font-size: rem($font_size_md);
+}
+h4 {
+  font-size: rem($font_size_sm);
+}
+h5 {
+  font-size: rem($font_size_xs);
+}
+h5 {
+  font-size: rem($font_size_xs);
+}
+
+p {
+  line-height: 150%;
+}
+
+a {
+  color: $color_link;
+  text-decoration: none;
+}
+
+li {
+  @if ($is_global_list_style_off == true) {
+    @include toggle-list-style(true);
+  }
+}
+
+*::selection {
+  @if (is_color_text_select == true) {
+    color: $color_text_select;
+    background: $color_text_bg_select;
+  }
+}
