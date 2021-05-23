@@ -16,7 +16,7 @@ const Header: React.FC = () => {
                                 <img src={logo} alt="logo" />
                             </a>
                         </div>
-                        <CitySelector className={classes['city-selector']} />
+                        <CitySelector />
                         <NavBar className={classes['navbar']} />
                     </div>
                 </div>

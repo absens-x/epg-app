@@ -1,0 +1,18 @@
+@import '../../sass/utils/index';
+
+.button {
+    background-color: #fff;
+    border: 1px solid $color_gray;
+    padding: 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-out;
+    font-family: $second_font_family;
+
+    &:active {
+        background-color: $color_yellow;
+    }
+}
+
+.selected {
+    background-color: $color_yellow;
+}

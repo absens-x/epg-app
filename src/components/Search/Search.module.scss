@@ -1,0 +1,31 @@
+@import '../../sass/utils/index';
+
+.search {
+    position: relative;
+    display: block;
+}
+
+.input {
+    border: none;
+    outline: none;
+    padding: 16px 0 16px 20px;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    border: 1px solid #f4f4f4;
+    background-color: #f4f4f4;
+    transition: border 0.3s ease-in;
+
+    &:focus {
+        border-color: $color_light_dark;
+    }
+}
+
+.submit-btn {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    background: none;
+    border: none;
+}
