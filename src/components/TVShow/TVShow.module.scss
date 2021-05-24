@@ -1,0 +1,49 @@
+@import '../../sass/utils/index';
+
+.tvshow {
+    padding: 10px;
+}
+
+.preview {
+    position: relative;
+    float: left;
+    display: inline-block;
+    margin-right: 20px;
+    // width: size(3);
+
+    img {
+        vertical-align: middle;
+    }
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 4px;
+    background-color: rgba($color: $color_dark, $alpha: 0.7);
+
+    span {
+        display: block;
+        height: 4px;
+        background-color: #29fe06;
+        border-radius: 2px;
+    }
+}
+
+.info {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-top: 5px;
+}
+
+.desc {
+    margin: 0;
+    color: rgba($color: $color_dark, $alpha: 0.5);
+    @include clearfix;
+}
+
+.title {
+    font-weight: bold;
+}

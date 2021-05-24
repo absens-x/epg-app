@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import CategoryButton from '../../components/CategoryButton/CategoryButton';
 import classes from './CategoriesList.module.scss';
 import { ICategoriesList } from './types';
+import { v4 } from 'uuid';
 
 const CategoriesList: React.FC<ICategoriesList> = ({ className, categories }) => {
     return (
@@ -11,7 +12,7 @@ const CategoriesList: React.FC<ICategoriesList> = ({ className, categories }) =>
                     {categories.map((item: any) => {
                         const { thid, name } = item;
                         return (
-                            <li key={new Date().getTime() + thid} className={classes['item']}>
+                            <li key={v4()} className={classes['item']}>
                                 <CategoryButton title={name} />
                             </li>
                         );

@@ -21,6 +21,7 @@ h4,
 h5,
 h6 {
     font-family: $second_font_family;
+    line-height: $second_font_line_height;
     font-style: normal;
     font-weight: normal;
 }
@@ -42,10 +43,6 @@ h5 {
 }
 h6 {
     font-size: rem($font_size_xs);
-}
-
-p {
-    line-height: 150%;
 }
 
 a {

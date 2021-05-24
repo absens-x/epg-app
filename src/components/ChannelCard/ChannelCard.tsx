@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { NavLink } from 'react-router-dom';
 import classes from './ChannelCard.module.scss';
 
 interface IChannelCard {
@@ -13,7 +14,9 @@ const ChannelCard: React.FC<IChannelCard> = ({ className, title, logo }) => {
             <span className={classes['logo']}>
                 <img src={`https://epg.domru.ru/${logo}`} alt={`${title} logo`} />
             </span>
-            <p className={classes['title']}>{title}</p>
+            <p className={classes['title']}>
+                <NavLink to="/tvshow">{title}</NavLink>{' '}
+            </p>
         </div>
     );
 };

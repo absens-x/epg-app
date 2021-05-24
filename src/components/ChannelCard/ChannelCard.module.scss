@@ -6,6 +6,11 @@
     border-radius: 6px;
     text-align: center;
     padding: 16px 20px;
+    transition: box-shadow 0.3s ease-out;
+
+    &:hover {
+        box-shadow: 0px 14px 25px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .logo {
@@ -20,4 +25,8 @@
 
 .title {
     margin: 0;
+
+    a {
+        color: $color_light_dark;
+    }
 }

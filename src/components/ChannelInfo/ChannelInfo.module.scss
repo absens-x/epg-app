@@ -1,0 +1,17 @@
+@import '../../sass/utils/index';
+
+.title {
+    margin-left: 20px;
+}
+
+.logo {
+    border: 1px solid $color_gray;
+    border-radius: 10px;
+    padding: 20px;
+
+    img {
+        width: 60px;
+        height: 60px;
+        vertical-align: middle;
+    }
+}

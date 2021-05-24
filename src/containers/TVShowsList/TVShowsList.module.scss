@@ -1,0 +1,15 @@
+@import '../../sass/utils/index';
+
+.list {
+    padding: 0;
+}
+
+.item {
+    border-bottom: 1px solid rgba($color: $color_dark, $alpha: 0.1);
+    transition: background-color 0.3s ease-out;
+    margin-bottom: 16px;
+
+    &:hover {
+        background-color: $color_gray;
+    }
+}
