@@ -1,9 +1,6 @@
 import clsx from 'clsx';
 import classes from './NavBar.module.scss';
-
-interface INavBar {
-    className?: string;
-}
+import { INavBar } from './types';
 
 const NavBar: React.FC<INavBar> = ({ className }) => {
     return (

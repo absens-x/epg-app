@@ -1,13 +1,8 @@
 import classes from './Paper.module.scss';
 import clsx from 'clsx';
-import { ReactNode } from 'react';
+import { IPaper } from './types';
 
-interface IPaper {
-    children: ReactNode;
-    className?: string;
-}
-
-const Paper: React.FC<IPaper> = ({ children, className }) => {
+const Paper: React.FC<IPaper> = ({ className, children }) => {
     return <div className={clsx(className, classes['paper'])}>{children}</div>;
 };
 

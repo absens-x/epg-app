@@ -1,10 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 import classes from './CitySelector.module.scss';
-
-interface ICitySelector {
-    className?: string;
-}
+import { ICitySelector } from './types';
 
 const CitySelector: React.FC<ICitySelector> = ({ className }) => {
     return (
