@@ -1,0 +1,16 @@
+@import '../../sass/utils/index';
+
+.theme-title {
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+.list {
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.item {
+    margin: $gutter;
+    width: size(3);
+}

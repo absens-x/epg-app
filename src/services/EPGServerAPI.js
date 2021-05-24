@@ -41,7 +41,7 @@ class EPGServerAPI {
   
   const obj = new EPGServerAPI();
 
-// obj.getAllThemes().then(res => console.log(res));
+// obj.getAllThemes().then(res => console.log(JSON.stringify(res)));
   
 // obj.getAllChannels().then(res => console.log(res))
 
