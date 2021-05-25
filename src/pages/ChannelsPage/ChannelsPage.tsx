@@ -4,9 +4,11 @@ import Paper from '../../components/Paper/Paper';
 import Search from '../../components/Search/Search';
 import CategoriesList from '../../containers/CategoriesList/CategoriesList';
 import ChannelsList from '../../containers/ChannelsList/ChannelsList';
+import { ICategory } from '../../components/CategoryButton/types';
+import { IChannel } from '../../components/ChannelCard/types';
 
 const ChannelsPage: React.FC = () => {
-    const categories: any = [
+    const categories: ICategory[] = [
         { thid: '1', name: 'Общедоступные', plural: 'Общедоступные', alias: 'polit', weight: '0' },
         { thid: '6', name: 'Фильмовые', plural: 'Фильмовые', alias: 'film', weight: '1' },
         { thid: '2', name: 'Развлекательные', plural: 'Развлекательные', alias: 'party', weight: '2' },
@@ -20,7 +22,7 @@ const ChannelsPage: React.FC = () => {
         { thid: '61', name: 'Канал подарков', plural: 'Канал подарков', alias: 'podarki', weight: '10' },
     ];
 
-    const channels: any = [
+    const channels: IChannel[] = [
         {
             chid: '7483',
             title: '7tv',

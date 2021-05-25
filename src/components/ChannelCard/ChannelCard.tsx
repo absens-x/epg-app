@@ -1,12 +1,7 @@
 import clsx from 'clsx';
 import { NavLink } from 'react-router-dom';
 import classes from './ChannelCard.module.scss';
-
-interface IChannelCard {
-    className?: string;
-    title: string;
-    logo: string;
-}
+import { IChannelCard } from './types';
 
 const ChannelCard: React.FC<IChannelCard> = ({ className, title, logo }) => {
     return (

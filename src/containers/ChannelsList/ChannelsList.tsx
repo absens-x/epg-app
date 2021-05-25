@@ -1,8 +1,8 @@
+import clsx from 'clsx';
+import { v4 } from 'uuid';
 import classes from './ChannelsList.module.scss';
 import ChannelCard from '../../components/ChannelCard/ChannelCard';
 import { IChannelsList } from './types';
-import clsx from 'clsx';
-import { v4 } from 'uuid';
 
 const ChannelsList: React.FC<IChannelsList> = ({ className, themeTitle, channels }) => {
     return (
