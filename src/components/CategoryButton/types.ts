@@ -1,3 +1,5 @@
+export type CategoryIDType = null | number | string;
+
 export interface ICategory {
     thid: string | number;
     name: string;
@@ -7,7 +9,7 @@ export interface ICategory {
 }
 
 export interface ICategoryButton {
-    thid: string | number;
+    thid: CategoryIDType;
     className?: string;
     selected?: boolean;
     title: string;

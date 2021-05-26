@@ -4,9 +4,16 @@ import classes from './ChannelsList.module.scss';
 import ChannelCard from '../../components/ChannelCard/ChannelCard';
 import { IChannelsList } from './types';
 import { IChannel } from '../../components/ChannelCard/types';
-import { ICategory } from '../../components/CategoryButton/types';
+import { CategoryIDType, ICategory } from '../../components/CategoryButton/types';
+import { useSelector } from 'react-redux';
 
 const ChannelsList: React.FC<IChannelsList> = ({ className, channels, categories }) => {
+    const selectedId: CategoryIDType = useSelector((state: any) => state.category.selectedId);
+
+    if (selectedId) {
+        categories = categories.filter((category) => category.thid === selectedId);
+    }
+
     return (
         <div className={clsx(className, classes['channels-list'])}>
             {categories.length ? (

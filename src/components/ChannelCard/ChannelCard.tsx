@@ -10,7 +10,7 @@ const ChannelCard: React.FC<IChannelCard> = ({ className, title, logo }) => {
                 <img src={`https://epg.domru.ru/${logo}`} alt={`${title} logo`} />
             </span>
             <p className={classes['title']}>
-                <NavLink to="/tvshow">{title}</NavLink>{' '}
+                <NavLink to="/channel?xvid=">{title}</NavLink>{' '}
             </p>
         </div>
     );

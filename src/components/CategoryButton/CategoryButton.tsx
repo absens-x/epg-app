@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useEffect, useState } from 'react';
 import classes from './CategoryButton.module.scss';
 import { ICategoryButton } from './types';
 
@@ -14,8 +15,13 @@ const CategoryButton: React.FC<ICategoryButton> = ({
     if (selected) {
         cls.push(classes['selected']);
     }
+
+    function onClickHandle() {
+        onSelectCategoryId(thid);
+    }
+
     return (
-        <button onClick={() => onSelectCategoryId(thid)} className={clsx(cls)}>
+        <button onClick={onClickHandle} className={clsx(cls)}>
             {title}
         </button>
     );
