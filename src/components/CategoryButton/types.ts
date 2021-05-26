@@ -7,8 +7,9 @@ export interface ICategory {
 }
 
 export interface ICategoryButton {
+    thid: string | number;
     className?: string;
     selected?: boolean;
     title: string;
-    onSelectCategory: () => void;
+    onSelectCategoryId: (id: null | number | string) => void;
 }
