@@ -1,12 +1,16 @@
-interface IEPGServerAPI {}
+interface IEPGServerAPI {
+    BASE_API: string;
+    DEFAULT_DOMAIN: string;
+}
 
 export default class EPGServerAPI {
     private BASE_API = 'http://epg.domru.ru';
-    private CITY = '';
-    private FILTERS = '';
+    private DOMAIN = '';
+    private DEFAULT_DOMAIN = 'ekat';
+    private CHANNEL_FILTERS = '';
 
-    constructor(city = 'ekat') {
-        this.CITY = city;
+    constructor(domain: string) {
+        this.DOMAIN = domain || this.DEFAULT_DOMAIN;
     }
 
     public getResource = async (url: string) => {
@@ -26,13 +30,21 @@ export default class EPGServerAPI {
     };
 
     public getAllChannels = async () => {
-        const res = await this.getResource(`/channel/list?domain=${this.CITY}`);
+        const res = await this.getResource(`/channel/list?domain=${this.DOMAIN}`);
         return res;
     };
 
     public getChannelByID = async (id: string | number) => {
-        const res = await this.getResource(`/channel/info?chid=${id}&domain=${this.CITY}`);
+        const res = await this.getResource(`/channel/info?chid=${id}&domain=${this.DOMAIN}`);
         return res;
+    };
+
+    public setChannelsFilters = (filters: string): void => {
+        this.CHANNEL_FILTERS = filters;
+    };
+
+    public getChannelsFilters = (): string => {
+        return this.CHANNEL_FILTERS;
     };
 
     public getTVShows = async () => {
@@ -41,7 +53,7 @@ export default class EPGServerAPI {
     };
 }
 
-const obj = new EPGServerAPI();
+// const obj = new EPGServerAPI();
 
 // obj.getAllThemes().then(res => console.log(JSON.stringify(res)));
 

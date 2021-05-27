@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest } from '@redux-saga/core/effects';
+import { call, put, select, takeEvery } from '@redux-saga/core/effects';
 import EPGServerAPI from '../../services/EPGServerAPI';
 import { FETCH_CHANNELS } from '../actions/actionTypes';
 import { setChannelsAction } from '../actions/channelActions';
