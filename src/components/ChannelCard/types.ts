@@ -17,4 +17,6 @@ export interface IChannelCard {
     className?: string;
     title: string;
     logo: string;
+    chid: string | number;
+    xvid: string | number;
 }

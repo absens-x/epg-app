@@ -2,8 +2,8 @@ import classes from './TVShowsList.module.scss';
 import { ITVShowsList } from './types';
 import clsx from 'clsx';
 import { v4 } from 'uuid';
-import TVShow from '../../components/TVShow/TVShow';
-import { ITVShow } from '../../components/TVShow/types';
+import TVShow from '../../components/TVShowCard/TVShowCard';
+import { ITVShow } from '../../components/TVShowCard/types';
 
 const TVShowsList: React.FC<ITVShowsList> = ({ className, tvshows }) => {
     return (
@@ -19,7 +19,7 @@ const TVShowsList: React.FC<ITVShowsList> = ({ className, tvshows }) => {
                     })}
                 </ul>
             ) : (
-                <p>Каналы не доступны</p>
+                <p>Телепрограмма не доступна</p>
             )}
         </div>
     );

@@ -28,7 +28,12 @@ const ChannelsList: React.FC<IChannelsList> = ({ className, channels, categories
                                         .map((channel: IChannel) => {
                                             return (
                                                 <li key={v4()} className={classes['item']}>
-                                                    <ChannelCard title={channel.title} logo={channel.logo} />
+                                                    <ChannelCard
+                                                        chid={channel.chid}
+                                                        xvid={channel.xvid}
+                                                        title={channel.title}
+                                                        logo={channel.logo}
+                                                    />
                                                 </li>
                                             );
                                         })

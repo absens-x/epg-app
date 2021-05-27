@@ -2,37 +2,23 @@ import ChannelInfo from '../../components/ChannelInfo/ChannelInfo';
 import classes from './TVShowsPage.module.scss';
 import logo from '../../assets/img/chlogo2.png';
 import TVShowsList from '../../containers/TVShowsList/TVShowsList';
+import { ITVShow } from '../../components/TVShowCard/types';
+import { RouteComponentProps } from 'react-router';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchChannelTVShowsAction } from '../../store/actions/channelActions';
 
-const TVShowsPage: React.FC = () => {
-    const tvshows = [
-        {
-            xvid: '3783',
-            start: '2021-05-23 00:00:00',
-            duration: '3900',
-            title: 'Закрытая школа [16+]',
-            desc: 'Сериал рассказывает о жизни элитной школы-интерната, расположенной в усадьбе посреди мрачного, но живописного леса',
-            icon: '2441795?size=560x315',
-            tid: '363',
-        },
-        {
-            xvid: '3783',
-            start: '2021-05-23 01:05:00',
-            duration: '3900',
-            title: 'Сенсация или провокация [12+]',
-            desc: 'Сенсационные гипотезы, научные открытия, шокирующие прогнозы в нашей программе',
-            icon: '1441825?size=560x315',
-            tid: '3353',
-        },
-        {
-            xvid: '3783',
-            start: '2021-05-23 02:10:00',
-            duration: '3000',
-            title: 'В мире чудес [12+]',
-            desc: 'Цикл документальных фильмов-исследований жизни людей и явлений нашего времени. Это срез нашей собственной жизни',
-            icon: '1441820?size=560x315',
-            tid: '3353',
-        },
-    ];
+const TVShowsPage: React.FC<RouteComponentProps> = ({ location }) => {
+    const queryParams: URLSearchParams = new URLSearchParams(location.search);
+    const tvshows: Array<ITVShow> = useSelector((state: any) => state.channel.tvshows);
+    const dispatch = useDispatch();
+
+    console.log(tvshows);
+
+    useEffect(() => {
+        // fetch channel info
+        dispatch(fetchChannelTVShowsAction(queryParams.get('xvid')));
+    }, []);
 
     return (
         <main>

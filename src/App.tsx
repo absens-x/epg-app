@@ -11,7 +11,7 @@ function App() {
             <Header />
             <Switch>
                 <Route path="/" exact component={ChannelsPage} />
-                <Route path="/tvshow" exact component={TVShowsPage} />
+                <Route path="/program/list" component={TVShowsPage} />
             </Switch>
         </div>
     );

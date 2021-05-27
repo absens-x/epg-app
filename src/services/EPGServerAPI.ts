@@ -1,20 +1,20 @@
 interface IEPGServerAPI {
-    BASE_API: string;
-    DEFAULT_DOMAIN: string;
+    baseApi: string;
+    defaultDomain: string;
 }
 
 export default class EPGServerAPI {
-    private BASE_API = 'http://epg.domru.ru';
-    private DOMAIN = '';
-    private DEFAULT_DOMAIN = 'ekat';
-    private CHANNEL_FILTERS = '';
+    private baseApi: string = 'http://epg.domru.ru';
+    private domain: string = '';
+    private defaultDomain: string = 'ekat';
+    private channelFfilters: string = '';
 
     constructor(domain: string) {
-        this.DOMAIN = domain || this.DEFAULT_DOMAIN;
+        this.domain = domain || this.defaultDomain;
     }
 
     public getResource = async (url: string) => {
-        const query = this.BASE_API + url;
+        const query: string = this.baseApi + url;
         const res = await fetch(query);
 
         if (!res.ok) {
@@ -30,27 +30,40 @@ export default class EPGServerAPI {
     };
 
     public getAllChannels = async () => {
-        const res = await this.getResource(`/channel/list?domain=${this.DOMAIN}`);
+        const res = await this.getResource(`/channel/list?domain=${this.domain}`);
         return res;
     };
 
     public getChannelByID = async (id: string | number) => {
-        const res = await this.getResource(`/channel/info?chid=${id}&domain=${this.DOMAIN}`);
+        const res = await this.getResource(`/channel/info?chid=${id}&domain=${this.domain}`);
         return res;
     };
 
-    public setChannelsFilters = (filters: string): void => {
-        this.CHANNEL_FILTERS = filters;
-    };
+    public getChannelTVShows = async (xvid: string | number) => {
+        const dateFrom = '2021-05-27';
+        const dateTo = '2021-05-28';
 
-    public getChannelsFilters = (): string => {
-        return this.CHANNEL_FILTERS;
-    };
-
-    public getTVShows = async () => {
-        const res = await this.getResource(``);
+        const res = await this.getResource(
+            `/program/list?digit=1&date_from=${dateFrom}&date_to=${dateTo}&xvid[0]=${xvid}&domain=${this.domain}`,
+        );
         return res;
     };
+
+    public getDomainName(): string {
+        return this.domain;
+    }
+
+    public setDomainName(domain: string): void {
+        this.domain = domain;
+    }
+
+    public setChannelsFilters(filters: string): void {
+        this.channelFfilters = filters || '';
+    }
+
+    public getChannelsFilters(): string {
+        return this.channelFfilters;
+    }
 }
 
 // const obj = new EPGServerAPI();

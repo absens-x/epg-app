@@ -1,4 +1,6 @@
+import { ITVShow } from '../../components/TVShowCard/types';
+
 export interface ITVShowsList {
     className?: string;
-    tvshows: any[];
+    tvshows: Array<ITVShow>;
 }

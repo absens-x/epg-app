@@ -1,9 +1,9 @@
-import classes from './TVShow.module.scss';
-import { ITVShow } from './types';
+import classes from './TVShowCard.module.scss';
+import { ITVShowCard } from './types';
 import preview from '../../assets/img/tvshow_preview.jpg';
 import clsx from 'clsx';
 
-const TVShow: React.FC<ITVShow> = ({ className, title, desc, icon, start, duration }) => {
+const TVShowCard: React.FC<ITVShowCard> = ({ className, title, desc, icon, start, duration }) => {
     const startTime: string = new Date(start).toLocaleTimeString();
 
     return (
@@ -25,4 +25,4 @@ const TVShow: React.FC<ITVShow> = ({ className, title, desc, icon, start, durati
     );
 };
 
-export default TVShow;
+export default TVShowCard;
