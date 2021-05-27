@@ -8,6 +8,7 @@ import CitySelector from '../CitySelector/CitySelector';
 import NavBar from '../NavBar/NavBar';
 
 import { IHeader } from './types';
+import { NavLink } from 'react-router-dom';
 
 const Header: React.FC<IHeader> = ({ className }) => {
     return (
@@ -16,12 +17,11 @@ const Header: React.FC<IHeader> = ({ className }) => {
                 <div className="container">
                     <div className={clsx('row-mg', classes['inner'])}>
                         <div className={classes['logo']}>
-                            <a href="/">
+                            <NavLink to="/">
                                 <img src={logo} alt="logo" />
-                            </a>
+                            </NavLink>
                         </div>
-                        <CitySelector />
-                        <NavBar className={classes['navbar']} />
+                        <CitySelector className={classes['city-selector']} />
                     </div>
                 </div>
             </div>

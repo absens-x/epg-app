@@ -1,36 +1,59 @@
 import ChannelInfo from '../../components/ChannelInfo/ChannelInfo';
 import classes from './TVShowsPage.module.scss';
-import logo from '../../assets/img/chlogo2.png';
 import TVShowsList from '../../containers/TVShowsList/TVShowsList';
 import { ITVShow } from '../../components/TVShowCard/types';
 import { RouteComponentProps } from 'react-router';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchChannelTVShowsAction } from '../../store/actions/channelActions';
+import {
+    fetchChannelInfoAction,
+    fetchChannelTVShowsAction,
+    setOpenChannelIDs,
+} from '../../store/actions/channelActions';
+import { IChannelInfoData } from '../../components/ChannelInfo/types';
+import EPGServerAPI from '../../services/EPGServerAPI';
 
 const TVShowsPage: React.FC<RouteComponentProps> = ({ location }) => {
     const queryParams: URLSearchParams = new URLSearchParams(location.search);
-    const tvshows: Array<ITVShow> = useSelector((state: any) => state.channel.tvshows);
+    const egpApi = new EPGServerAPI();
+    const channelInfo: IChannelInfoData = useSelector((state: any) => state.channel.channelInfo);
+    const tvshows = useSelector((state: any) => state.channel.tvshows);
+    let channelTVShowsList: Array<ITVShow> = [];
     const dispatch = useDispatch();
 
-    console.log(tvshows);
+    if (tvshows) {
+        Object.keys(tvshows).forEach((item: string) => {
+            channelTVShowsList = [...tvshows[item]];
+        });
+    }
 
     useEffect(() => {
-        // fetch channel info
-        dispatch(fetchChannelTVShowsAction(queryParams.get('xvid')));
+        dispatch(
+            setOpenChannelIDs({
+                xvid: queryParams.get('xvid'),
+                chid: queryParams.get('chid'),
+            }),
+        );
+        dispatch(fetchChannelTVShowsAction());
+        dispatch(fetchChannelInfoAction());
     }, []);
 
     return (
         <main>
             <div className="container">
-                <ChannelInfo
-                    className={classes['channel-info']}
-                    title="НТВ HD"
-                    logo={logo}
-                    desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime velit, quasi aperiam consectetur laboriosam reprehenderit quis est aliquid voluptas. Ad."
-                />
+                {channelInfo ? (
+                    <ChannelInfo
+                        className={classes['channel-info']}
+                        title={channelInfo.title}
+                        logo={egpApi.getBaseApi() + channelInfo.logo}
+                        desc={channelInfo.description}
+                    />
+                ) : (
+                    <p>Информация о канале не доступна</p>
+                )}
+
                 <h3>Телепрограмма на сегодня</h3>
-                <TVShowsList tvshows={tvshows} />
+                <TVShowsList tvshows={channelTVShowsList} />
             </div>
         </main>
     );

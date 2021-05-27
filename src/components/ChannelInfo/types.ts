@@ -20,7 +20,7 @@ export interface IChannelInfoData {
     theme: string;
     button: string | number;
     digit: number[];
-    similar: IChannelSimilar[];
+    similar: Array<IChannelSimilar>;
 }
 
 export interface IChannelInfo {
