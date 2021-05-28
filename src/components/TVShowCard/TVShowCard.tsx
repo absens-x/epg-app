@@ -5,12 +5,9 @@ import clsx from 'clsx';
 const moment = require('moment');
 
 const TVShowCard: React.FC<ITVShowCard> = ({ className, title, desc, icon, start, duration }) => {
-    const date = new Date(start);
+    const date: Date = new Date(start);
     const startTime: string = moment(date).format('HH:mm');
     const isFinished: boolean = false;
-
-    console.log(Date.now());
-    console.log(date.getMilliseconds() + Number(duration) * 60);
 
     return (
         <div className={clsx(className, classes['tvshow'])}>

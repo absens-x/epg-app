@@ -6,8 +6,6 @@ import TVShowCard from '../../components/TVShowCard/TVShowCard';
 import { ITVShow } from '../../components/TVShowCard/types';
 
 const TVShowsList: React.FC<ITVShowsList> = ({ className, tvshows }) => {
-    console.log(tvshows);
-
     return (
         <div className={clsx(className, classes['tvshows-list'])}>
             {tvshows.length ? (
