@@ -37,10 +37,10 @@ export default class EPGServerAPI {
     };
 
     public getChannelTVShowsById = async (xvid: string | number) => {
-        // const dateFrom = moment().format('YYYY-MM-DD');
-        // const dateTo = moment().add(1, 'day').format('YYYY-MM-DD');
-        const dateFrom = '2021-05-27';
-        const dateTo = '2021-05-29';
+        const dateFrom = moment().format('YYYY-MM-DD');
+        const dateTo = moment().add(1, 'day').format('YYYY-MM-DD');
+        // const dateFrom = '2021-05-27';
+        // const dateTo = '2021-05-29';
         const res = await this.getResource(
             `/program/list?digit=1&date_from=${dateFrom}&date_to=${dateTo}&xvid[0]=${xvid}&domain=${this.domain}`,
         );
