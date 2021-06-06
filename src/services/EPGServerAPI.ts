@@ -4,7 +4,7 @@ export default class EPGServerAPI {
     private baseApi: string = 'http://epg.domru.ru';
     private domain: string = '';
     private defaultDomain: string = 'ekat';
-    private channelFfilters: string = '';
+    private channelFilters: string = '';
 
     constructor(domain?: string) {
         this.domain = domain || this.defaultDomain;
@@ -61,11 +61,11 @@ export default class EPGServerAPI {
     }
 
     public setChannelsFilters(filters: string): void {
-        this.channelFfilters = filters || '';
+        this.channelFilters = filters || '';
     }
 
     public getChannelsFilters(): string {
-        return this.channelFfilters;
+        return this.channelFilters;
     }
 }
 
